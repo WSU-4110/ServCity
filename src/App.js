@@ -1,55 +1,27 @@
-import React, { useState, useEffect } from "react";
-import Placelists from "./List/List";
-import { GetFoursquarePlacesData } from "./API/Api";
-import { Dropdown } from "./DropdownStyles";
-import TextField from "@mui/material/TextField";
-import MenuItem from "@mui/material/MenuItem";
-function App() {
-  const [results, setResults] = useState([]);
-  const [service, setService] = useState("");
-  const [coordinates, setCoordinates] = useState({});
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoordinates({ lat: latitude, lng: longitude });
-      }
-    );
-  }, []);
-  console.log(service, coordinates.lat, coordinates.lng);
-  const handleChange = (event) => {
-    setService(event.target.value);
-  };
-  // useEffect(() => {
-  //   GetFoursquarePlacesData(coordinates.lat, coordinates.lng, service).then(
-  //     (results) => {
-  //       setResults(results);
-  //     }
-  //   );
-  // }, [coordinates, service]);
+import "./index.css";
+import ResponsiveAppBar from "./Components/AppBar";
+import Home from "./Components/Home";
+import Automotive from "./Components/Automotive/Automative";
+import DIY from "./Components/DIY";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom";
 
+function App() {
   return (
     <>
-      {/* Dropdown for the service */}
-      <Dropdown>
-        <TextField
-          label="Select a Service"
-          select
-          value={service}
-          onChange={handleChange}
-          sx={{ minWidth: 500 }}
-          InputLabelProps={{ className: "textfield_labels" }}
-          InputProps={{ className: "textfield_inputs" }}
-        >
-          <MenuItem value={""}>
-            <em>None</em>
-          </MenuItem>
-          <MenuItem value={"oilchange"}>Oil change</MenuItem>
-          <MenuItem value={"tireservice"}>Tire replacement</MenuItem>
-          <MenuItem value={"tirerepairshop"}>Tire alingment</MenuItem>
-        </TextField>
-      </Dropdown>
-      {/* List of the places nearby */}
-      <Placelists results={results} />
+      <Router>
+        <ResponsiveAppBar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Automotive" element={<Automotive />} />
+          <Route path="/DIY" element={<DIY />} />
+        </Routes>
+      </Router>
     </>
   );
 }

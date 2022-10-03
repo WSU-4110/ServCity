@@ -1,5 +1,4 @@
 import axios from "axios";
-import List from "../List/List";
 
 // Google  Places API Search
 const GoogleAPIKey = "AIzaSyAF9i1A12NtujwP1WXmYgZd7d-lbE20iY8";

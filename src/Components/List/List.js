@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Grid from "@mui/material/Grid";
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 import { Listcontainer } from "./Liststyles";
-import { GetGooglePlacesData, GetFoursquarePlacesData } from "../API/Api";
+import { GetGooglePlacesData, GetFoursquarePlacesData } from "../../API/Api";
 const List = ({ results }) => {
   return (
     <Listcontainer>
