@@ -15,17 +15,22 @@ function AutomativeDropdown() {
       }
     );
   }, []);
-  console.log(service, coordinates.lat, coordinates.lng);
+
   const handleChange = (event) => {
     setService(event.target.value);
   };
-  // useEffect(() => {
-  //   GetFoursquarePlacesData(coordinates.lat, coordinates.lng, service).then(
-  //     (results) => {
-  //       setResults(results);
-  //     }
-  //   );
-  // }, [coordinates, service]);
+  useEffect(() => {
+    if (service === "none") {
+      setResults([]);
+      console.log(service, coordinates.lat, coordinates.lng);
+    } else if (service === "oilchange" || service === "tireservice") {
+      GetFoursquarePlacesData(coordinates.lat, coordinates.lng, service).then(
+        (results) => {
+          setResults(results);
+        }
+      );
+    }
+  }, [coordinates, service]);
 
   return (
     <>
@@ -40,12 +45,11 @@ function AutomativeDropdown() {
           InputLabelProps={{ className: "textfield_labels" }}
           InputProps={{ className: "textfield_inputs" }}
         >
-          <MenuItem value={""}>
+          <MenuItem value={"none"}>
             <em>None</em>
           </MenuItem>
           <MenuItem value={"oilchange"}>Oil change</MenuItem>
-          <MenuItem value={"tireservice"}>Tire replacement</MenuItem>
-          <MenuItem value={"tirerepairshop"}>Tire alingment</MenuItem>
+          <MenuItem value={"tireservice"}>Tire Service</MenuItem>
         </TextField>
       </Dropdown>
       {/* List of the places nearby */}
