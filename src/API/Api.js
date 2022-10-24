@@ -1,9 +1,10 @@
 import axios from "axios";
-
 // Google  Places API Search
+export const GetGooglePlacesData = async () => {};
 
 // Foursquare Places API Search
 export const GetFoursquarePlacesData = async (l1, l2, service) => {
+  console.log(process.env.REACT_APP_GOOGLEPLACESAPIKEY);
   let Service = service;
   let lat = l1;
   let lon = l2;
@@ -13,7 +14,7 @@ export const GetFoursquarePlacesData = async (l1, l2, service) => {
     url: "https://api.foursquare.com/v3/places/search",
     headers: {
       accept: "application/json",
-      Authorization: "fsq3YPruQ40Fu5HIR4q7vFBp68SKhMTntAU283mB1HAgp18=",
+      Authorization: process.env.REACT_APP_FOURSQUAREPLACESAPIKEY,
     },
   };
 

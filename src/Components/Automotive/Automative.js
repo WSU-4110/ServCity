@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Placelists from "../List/List";
-import { GetFoursquarePlacesData } from "../../API/Api";
+import { GetFoursquarePlacesData, GetGooglePlacesData } from "../../API/Api";
 import { Dropdown } from "./DropdownStyles";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
@@ -19,17 +19,21 @@ function AutomativeDropdown() {
   const handleChange = (event) => {
     setService(event.target.value);
   };
+  // useEffect(() => {
+  //   if (service === "none") {
+  //     setResults([]);
+  //     console.log(service, coordinates.lat, coordinates.lng);
+  //   } else if (service === "oilchange" || service === "tireservice") {
+  //     GetFoursquarePlacesData(coordinates.lat, coordinates.lng, service).then(
+  //       (results) => {
+  //         setResults(results);
+  //       }
+  //     );
+  //   }
+  // }, [coordinates, service]);
+
   useEffect(() => {
-    if (service === "none") {
-      setResults([]);
-      console.log(service, coordinates.lat, coordinates.lng);
-    } else if (service === "oilchange" || service === "tireservice") {
-      GetFoursquarePlacesData(coordinates.lat, coordinates.lng, service).then(
-        (results) => {
-          setResults(results);
-        }
-      );
-    }
+    GetGooglePlacesData();
   }, [coordinates, service]);
 
   return (
