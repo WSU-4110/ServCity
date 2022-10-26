@@ -1,6 +1,7 @@
 import axios from "axios";
+
 // Google  Places API Search
-export const GetGooglePlacesData = async () => {};
+export function GetGooglePlacesData() {}
 
 // Foursquare Places API Search
 export const GetFoursquarePlacesData = async (l1, l2, service) => {
