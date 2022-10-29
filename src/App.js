@@ -1,4 +1,5 @@
 import "./index.css";
+import React, { useState, useEffect } from "react";
 import ResponsiveAppBar from "./Components/AppBar";
 import Home from "./Components/Home";
 import Automotive from "./Components/Automotive/Automative";
@@ -11,6 +12,8 @@ import {
 } from "react-router-dom";
 
 function App() {
+  console.log("render App.js");
+
   return (
     <>
       <Router>

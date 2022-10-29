@@ -1,19 +1,39 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Placelists from "../List/List";
-import { GetFoursquarePlacesData, GetGooglePlacesData } from "../../API/Api";
+import {
+  GetFoursquarePlacesData,
+  GetYelpPlacesData,
+  Postuserslocation,
+} from "../../API/Api";
 import { Dropdown } from "./DropdownStyles";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
+
 function AutomativeDropdown() {
+  console.log("render Automative.js");
+
   const [results, setResults] = useState([]);
   const [service, setService] = useState("");
-  const [coordinates, setCoordinates] = useState({});
+  // const [coordinates, setCoordinates] = useState({});
+
+  // useEffect(() => {
+  //   navigator.geolocation.getCurrentPosition(
+  //     ({ coords: { latitude, longitude } }) => {
+  //       setCoordinates({ lat: latitude, lng: longitude });
+  //     }
+  //   );
+  //   if (Object.keys(coordinates).length === 0) {
+  //     console.log("Empty location object");
+  //     console.log(coordinates);
+  //   } else {
+  //     console.log("not empty");
+  //     console.log(coordinates);
+  //     Postuserslocation(coordinates);
+  //   }
+  // }, []);
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoordinates({ lat: latitude, lng: longitude });
-      }
-    );
+    GetYelpPlacesData();
   }, []);
 
   const handleChange = (event) => {
@@ -31,10 +51,6 @@ function AutomativeDropdown() {
   //     );
   //   }
   // }, [coordinates, service]);
-
-  useEffect(() => {
-    GetGooglePlacesData();
-  }, [coordinates, service]);
 
   return (
     <>
