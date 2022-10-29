@@ -2,9 +2,9 @@ import "./index";
 import ResponsiveAppBar from "./Components/AppBar";
 import Home from "./Components/Home";
 import DIY from "./Components/DIY";
-import BrakeMaintenance from "./Components/BreakMaintenance"
-import Oiling from "./Components/Oiling"
-import Alignment from "./Components/TireAlignment"
+import BrakeMaintenance from "./Components/BreakMaintenance";
+import Oiling from "./Components/Oiling";
+import Alignment from "./Components/TireAlignment";
 import FluidFlush from "./Components/FluidFlush";
 import Tires from "./Components/Tires";
 
@@ -15,7 +15,6 @@ import {
   Routes,
 } from "react-router-dom";
 
-
 function App() {
   return (
     <>
@@ -25,11 +24,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
           <Route path="/DIY" element={<DIY />} />
-          <Route path="/BreakMaintenance" element={<BrakeMaintenance />}/>
-          <Route path="/Oiling" element={<Oiling />}/>
-          <Route path="/FluidFlush" element={<FluidFlush/>}/>
-          <Route path="/Tires" element={<Tires/>}/>
-          <Route path="/TireAlignment" element={<Alignment/>}/>
+          <Route path="/BreakMaintenance" element={<BrakeMaintenance />} />
+          <Route path="/Oiling" element={<Oiling />} />
+          <Route path="/FluidFlush" element={<FluidFlush />} />
+          <Route path="/Tires" element={<Tires />} />
+          <Route path="/TireAlignment" element={<Alignment />} />
         </Routes>
       </Router>
     </>

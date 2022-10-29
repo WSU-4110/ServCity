@@ -129,7 +129,11 @@ const ResponsiveAppBar = () => {
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Link
-                  style={{ textDecoration: "none", color: "black", margin: "20px"}}
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    margin: "20px",
+                  }}
                   to={`/${page}`}
                 >
                   {page}
