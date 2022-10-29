@@ -12,52 +12,38 @@ function HomePage(){
             <Link to="/Tires">
                 <button
                 type = "submit"
-                className = "btn btn-primary"> Tires & Wheelcare
+                className = "btn btn-primary"> Tire Maintenance 
                 </button>
             </Link>
             
 
-            <Link to="/Denting&Painting"> 
+            <Link to="/FluidFlush"> 
                 <button
                 type = "submit"
-                className = "btn btn-primary"> Denting & Paint
+                className = "btn btn-primary"> Fluid Flush 
                 </button>
             </Link>
 
-            <Link to="/Lights"> 
+            <Link to="/TireAlignment"> 
                 <button
                 type = "submit"
-                className = "btn btn-primary"> Lights & Windshield
+                className = "btn btn-primary"> Alignment 
                 </button>
             </Link>
             
-        
-            <Link to="/Batteries"> 
-                <button
-                type = "submit"
-                className = "btn btn-primary"> Batteries
-                </button>
-            </Link>
-
-            <Link to="/ACrepair">
-                <button
-                type = "submit"
-                className = "btn btn-primary"> A/C Repair
-                </button>
-            </Link>
 
             <Link to="/Oiling">  
                 <button
                 type = "submit"
-                className = "btn btn-primary"> Oiling
+                className = "btn btn-primary"> Oil Change
                 </button>
             </Link>
            
 
-            <Link to="/Clutch&Breaks">
+            <Link to="/BreakMaintenance">
                 <button
                 type = "submit"
-                className = "btn btn-primary"> Clutch & Breaks
+                className = "btn btn-primary"> Break Maintenance 
                 </button>
             </Link>
             

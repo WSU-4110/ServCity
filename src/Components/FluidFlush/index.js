@@ -1,10 +1,10 @@
 import React from "react"
 import "./denting.css"
 
-export default function Denting() {
+export default function FluidFlush() {
     return (
         <div> 
-            <h1>Denting & Painting Page</h1>
+            <h1>Fluid Flush</h1>
         </div>
     )
 }
