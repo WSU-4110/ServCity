@@ -1,80 +1,68 @@
 import { Home } from "@mui/icons-material";
-import React from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import "./home.css"
-
+import "bootstrap/dist/css/bootstrap.min.css";
 function HomePage(){
     return(
         <div>
             <h1> Welcome to ServiCity</h1>
 
             <Link to="/Tires">
-                <button
+                <Button
                 type = "submit"
-                className = "btn btn-primary"> Tires & Wheelcare
-                </button>
+                className = "btn btn-primary"> Tires
+                </Button>
             </Link>
             
 
-            <Link to="/Denting&Painting"> 
-                <button
+            <Link to="/Oil Change"> 
+                <Button
                 type = "submit"
-                className = "btn btn-primary"> Denting & Paint
-                </button>
-            </Link>
-
-            <Link to="/Lights"> 
-                <button
-                type = "submit"
-                className = "btn btn-primary"> Lights & Windshield
-                </button>
+                className = "btn btn-primary"> Oil Change
+                </Button>
             </Link>
             
         
-            <Link to="/Batteries"> 
-                <button
+            <Link to="/Brakes"> 
+                <Button
                 type = "submit"
-                className = "btn btn-primary"> Batteries
-                </button>
+                className = "btn btn-primary"> Brakes
+                </Button>
             </Link>
 
-            <Link to="/ACrepair">
-                <button
+            <Link to="/Alignment">
+                <Button
                 type = "submit"
-                className = "btn btn-primary"> A/C Repair
-                </button>
+                className = "btn btn-primary"> Alignment
+                </Button>
             </Link>
 
-            <Link to="/Oiling">  
-                <button
+            <Link to="/Fluid Flush">  
+                <Button
                 type = "submit"
-                className = "btn btn-primary"> Oiling
-                </button>
-            </Link>
-           
-
-            <Link to="/Clutch&Breaks">
-                <button
-                type = "submit"
-                className = "btn btn-primary"> Clutch & Breaks
-                </button>
+                className = "btn btn-primary"> Fluid Flush
+                </Button>
             </Link>
             
-
             <Link to="/DIY">
-                <button
+                <Button
                 type = "submit"
                 className = "btn btn-primary"> Do it Yourself
-                </button> 
+                </Button> 
             </Link>   
 
-        </div>
+            <div>
+                <img src="./images/background.png"/>
+            </div>
+
+        </div> 
+    
     );
 
-    <div>  <img src={require('./Logo.png')}> </img></div>
 
-
-}
+};
 
 export default HomePage;
+
+

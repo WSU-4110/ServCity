@@ -1,10 +1,10 @@
 import React from "react"
-import "./Oiling.css"
+import "./OilChange.css"
 
-export default function Oiling() {
+export default function OilChange() {
     return (
         <div>
-            <h1>Oiling Page</h1>
+            <h1>Oil Change Page</h1>
             <p className="p-text">This is a paragraph</p>
         </div>
         

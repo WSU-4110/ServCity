@@ -14,8 +14,14 @@ code {
     monospace;
 }
 .textfield_inputs {
-  color: rgb(8, 239, 0) !important;
+  color: rgb(132, 162, 148) !important;
 }
 .textfield_labels {
   color: white !important;
+}
+
+.bg-container {
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

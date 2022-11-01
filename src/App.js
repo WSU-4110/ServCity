@@ -1,14 +1,13 @@
 import "./index";
 import ResponsiveAppBar from "./Components/AppBar";
 import Home from "./Components/Home";
-import Automotive from "./Components/Automotive/Automative";
 import DIY from "./Components/DIY";
-import Clutch from "./Components/Clutch&Breaks"
-import Oiling from "./Components/Oiling"
-import Batteries from "./Components/Batteries";
-import Lights from "./Components/Lights";
-import Denting from "./Components/Denting&Paint";
+import Alignment from "./Components/Alignment"
+import OilChange from "./Components/OilChange"
+import Brakes from "./Components/Brakes";
 import Tires from "./Components/Tires";
+import FluidFlush from "./Components/FluidFlush";
+
 
 import {
   BrowserRouter as Router,
@@ -16,29 +15,24 @@ import {
   Switch,
   Routes,
 } from "react-router-dom";
-import ACrepair from "./Components/ACrepair";
 
 function App() {
   return (
-    <>
+    <div className='bg-container' style={{backgroundImage: 'url(/background.png)'}}>
       <Router>
         <ResponsiveAppBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Home" element={<Home />} />
-          <Route path="/Automotive" element={<Automotive />} />
-          <Route path="/DIY" element={<DIY />} />
-          <Route path="/Tires&Wheelcare" element={<Home/>} />
-          <Route path="/Clutch&Breaks" element={<Clutch />}/>
-          <Route path="/Oiling" element={<Oiling />}/>
-          <Route path="/ACrepair" element={<ACrepair/>}/>
-          <Route path="/Batteries" element={<Batteries/>}/>
-          <Route path="/Lights" element={<Lights/>}/>
-          <Route path="/Denting&Paint" elemtn={<Denting/>}/>
-          <Route path="/Tires" element={<Tires/>}/>
+          <Route path="/Tires" element={<Tires/>} />
+          <Route path="/Alginment" element={<Alignment />}/>
+          <Route path="/OilChange" element={<OilChange />}/>
+          <Route path="/FluidFlush" element={<FluidFlush/>}/>
+          <Route path="/Brakes" element={<Brakes/>}/>
+          <Route path="/DIY" element={<DIY/>}/>
         </Routes>
       </Router>
-    </>
+    </div>
   );
 }
 
