@@ -2,7 +2,6 @@
   "name": "serv_city",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:4000",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -32,7 +31,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "server": "nodemon Proxyserver.js",
+    "server": "node Proxyserver.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
