@@ -1,4 +1,6 @@
 import "./index";
+import React, { useState, useEffect } from "react";
+import { Postuserslocation } from "./API/Api";
 import ResponsiveAppBar from "./Components/AppBar";
 import Home from "./Components/Home";
 import DIY from "./Components/DIY";
@@ -8,14 +10,25 @@ import Alignment from "./Components/TireAlignment";
 import FluidFlush from "./Components/FluidFlush";
 import Tires from "./Components/Tires";
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
+  const [coordinates, setCoordinates] = useState({});
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
+    );
+  }, []);
+  if (Object.keys(coordinates).length === 0) {
+    console.log("Empty location object");
+    console.log(coordinates);
+  } else {
+    console.log("not empty");
+    console.log(coordinates);
+    Postuserslocation(coordinates);
+  }
   return (
     <>
       <Router>
