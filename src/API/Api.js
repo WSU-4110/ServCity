@@ -5,11 +5,6 @@ import { ServerStyleSheet } from "styled-components";
 import Places from "../../Proxyserver";
 
 class Oilchange {
-  constructor(nearbyplaces, recommendedplaces) {
-    this.nearbyPlaces = nearbyplaces;
-    this.recommendedPlaces = recommendedplaces;
-  }
-
   displaynearbyplaces() {
     var places = Places.GetNearbyPlaces("Oilchange");
     return places;
@@ -21,10 +16,6 @@ class Oilchange {
 }
 
 class FluidFlash {
-  constructor(nearbyplaces, recommendedplaces) {
-    this.nearbyPlaces = nearbyplaces;
-    this.recommendedPlaces = recommendedplaces;
-  }
   displaynearbyplaces() {
     var places = Places.GetNearbyPlaces("FulidFlash");
     return places;
