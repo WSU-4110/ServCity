@@ -3,6 +3,7 @@ import AspectRatio from "@mui/joy/AspectRatio";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
 import Card from "@mui/joy/Card";
+import { Chip, Rating } from "@mui/material";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import BookmarkAdd from "@mui/icons-material/BookmarkAddOutlined";
@@ -12,10 +13,11 @@ const PlaceDetails = ({ places }) => {
     <Card
       variant="outlined"
       sx={{
-        minWidth: "320px",
+        minWidth: "550px",
         margin: "10px",
         color: "white",
-        background: "black",
+        background:
+          "linear-gradient(90deg, rgba(8,36,93,1) 0%, rgba(102,0,99,1) 100%);",
       }}
     >
       <Box sx={{ display: "flex", flexDirection: "column", gap: 0.5 }}>
@@ -31,7 +33,9 @@ const PlaceDetails = ({ places }) => {
         size="sm"
         sx={{ position: "absolute", top: "0.5rem", right: "0.5rem" }}
       >
-        <BookmarkAdd />
+        {places.recommend === "yes" ? (
+          <Chip color="primary" label="Recommended" />
+        ) : null}
       </IconButton>
 
       <AspectRatio minHeight="120px" maxHeight="200px" sx={{ my: 2 }}>
@@ -40,13 +44,10 @@ const PlaceDetails = ({ places }) => {
           alt=""
         />
       </AspectRatio>
+
       <Box sx={{ display: "flex" }}>
-        <div>
-          <Typography level="body3">Rating</Typography>
-          <Typography fontSize="lg" fontWeight="lg">
-            {places.rating}
-          </Typography>
-        </div>
+        <Chip color="primary" label="Rating" />
+        <Rating value={places.rating} precision={0.5} readOnly />
         <Button
           variant="solid"
           size="sm"

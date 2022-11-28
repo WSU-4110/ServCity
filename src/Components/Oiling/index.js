@@ -8,23 +8,15 @@ import { Titleholder } from "./Oiling";
 export default function Oiling() {
   let service = "Oilchange";
   const [result, setResult] = useState([]);
-  const [recommended, setRecommended] = useState([]);
 
   useEffect(() => {
     GetNearbyPlaces(service).then((results) => {
       setResult(results);
     });
   }, []);
-  useEffect(() => {
-    GetRecommendedPlaces(service).then((results) => {
-      setRecommended(results);
-    });
-  }, []);
 
   return (
     <>
-      <Titleholder>Recommended</Titleholder>
-      <RecommendedList recommended={recommended} />
       <Titleholder>Nearby Places</Titleholder>
       <NearbyList result={result} />
     </>

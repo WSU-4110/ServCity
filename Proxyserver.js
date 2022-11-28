@@ -62,15 +62,14 @@ app.get("/oilchange", async (req, res) => {
   if (F_rating_formatted >= top_places[0].rating) {
     recommended.pop();
     recommended.push(foursquare_results.results[0]);
-    results.push([
-      {
-        name: foursquare_results.results[1].name,
-        formatted_address:
-          foursquare_results.results[1].location.formatted_address,
-        rating: foursquare_results.results[1].rating / 2,
-        review_count: foursquare_results.results[1].stats.total_ratings,
-      },
-    ]);
+    results.push({
+      name: foursquare_results.results[1].name,
+      formatted_address:
+        foursquare_results.results[1].location.formatted_address,
+      rating: foursquare_results.results[1].rating / 2,
+      review_count: foursquare_results.results[1].stats.total_ratings,
+      recommend: "yes",
+    });
     // storing nearby places with the yelp api results
     for (const key of Object.keys(yelp_results.businesses)) {
       results.push({
@@ -79,6 +78,7 @@ app.get("/oilchange", async (req, res) => {
         rating: yelp_results.businesses[key].rating,
         rating_count: yelp_results.businesses[key].review_count,
         distance: yelp_results.businesses[key].distance,
+        recommend: "no",
       });
     }
     // storing nearby places with Foursquare's api results
@@ -90,6 +90,7 @@ app.get("/oilchange", async (req, res) => {
             foursquare_results.results[key].location.formatted_address,
           rating: foursquare_results.results[key].rating / 2,
           review_count: foursquare_results.results[key].stats.total_ratings,
+          recommend: "no",
         });
       }
     }
@@ -97,15 +98,14 @@ app.get("/oilchange", async (req, res) => {
     recommended.pop();
     recommended.push(yelp_results.businesses[0]);
     // appending the recommended place in the results array
-    results.push([
-      {
-        name: yelp_results.businesses[0].name,
-        formatted_address: `${yelp_results.businesses[0].location.display_address[0]} ${yelp_results.businesses[0].location.display_address[1]}`,
-        rating: yelp_results.businesses[0].rating,
-        rating_count: yelp_results.businesses[0].review_count,
-        distance: yelp_results.businesses[0].distance,
-      },
-    ]);
+    results.push({
+      name: yelp_results.businesses[0].name,
+      formatted_address: `${yelp_results.businesses[0].location.display_address[0]} ${yelp_results.businesses[0].location.display_address[1]}`,
+      rating: yelp_results.businesses[0].rating,
+      rating_count: yelp_results.businesses[0].review_count,
+      distance: yelp_results.businesses[0].distance,
+      recommend: "yes",
+    });
     // storing nearby places with Foursquare's api results
     for (const key of Object.keys(foursquare_results.results)) {
       results.push({
@@ -114,6 +114,7 @@ app.get("/oilchange", async (req, res) => {
           foursquare_results.results[key].location.formatted_address,
         rating: foursquare_results.results[key].rating / 2,
         review_count: foursquare_results.results[key].stats.total_ratings,
+        recommend: "no",
       });
     }
     // storing nearby places with the yelp api results
@@ -125,6 +126,7 @@ app.get("/oilchange", async (req, res) => {
           rating: yelp_results.businesses[key].rating,
           rating_count: yelp_results.businesses[key].review_count,
           distance: yelp_results.businesses[key].distance,
+          recommend: "no",
         });
       }
     }
@@ -175,15 +177,14 @@ app.get("/tires", async (req, res) => {
   if (F_rating_formatted >= top_places[0].rating) {
     recommended.pop();
     recommended.push(foursquare_results.results[0]);
-    results.push([
-      {
-        name: foursquare_results.results[1].name,
-        formatted_address:
-          foursquare_results.results[1].location.formatted_address,
-        rating: foursquare_results.results[1].rating / 2,
-        review_count: foursquare_results.results[1].stats.total_ratings,
-      },
-    ]);
+    results.push({
+      name: foursquare_results.results[1].name,
+      formatted_address:
+        foursquare_results.results[1].location.formatted_address,
+      rating: foursquare_results.results[1].rating / 2,
+      review_count: foursquare_results.results[1].stats.total_ratings,
+      recommend: "yes",
+    });
     // storing nearby places with Foursquare's api results
     for (const key of Object.keys(foursquare_results.results)) {
       if (key > 0) {
@@ -193,6 +194,7 @@ app.get("/tires", async (req, res) => {
             foursquare_results.results[key].location.formatted_address,
           rating: foursquare_results.results[key].rating / 2,
           review_count: foursquare_results.results[key].stats.total_ratings,
+          recommend: "no",
         });
       }
     }
@@ -200,15 +202,14 @@ app.get("/tires", async (req, res) => {
     recommended.pop();
     recommended.push(yelp_results.businesses[0]);
     // appending the recommended place in the results array
-    results.push([
-      {
-        name: yelp_results.businesses[0].name,
-        formatted_address: `${yelp_results.businesses[0].location.display_address[0]} ${yelp_results.businesses[0].location.display_address[1]}`,
-        rating: yelp_results.businesses[0].rating,
-        rating_count: yelp_results.businesses[0].review_count,
-        distance: yelp_results.businesses[0].distance,
-      },
-    ]);
+    results.push({
+      name: yelp_results.businesses[0].name,
+      formatted_address: `${yelp_results.businesses[0].location.display_address[0]} ${yelp_results.businesses[0].location.display_address[1]}`,
+      rating: yelp_results.businesses[0].rating,
+      rating_count: yelp_results.businesses[0].review_count,
+      distance: yelp_results.businesses[0].distance,
+      recommend: "yes",
+    });
     // storing nearby places with Foursquare's api results
     for (const key of Object.keys(foursquare_results.results)) {
       if (key > 0) {
@@ -218,6 +219,7 @@ app.get("/tires", async (req, res) => {
             foursquare_results.results[key].location.formatted_address,
           rating: foursquare_results.results[key].rating / 2,
           review_count: foursquare_results.results[key].stats.total_ratings,
+          recommend: "no",
         });
       }
     }

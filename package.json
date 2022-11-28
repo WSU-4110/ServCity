@@ -2,7 +2,6 @@
   "name": "serv_city",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:4000",
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -25,6 +24,8 @@
     "react-router": "^6.4.1",
     "react-router-dom": "^6.4.1",
     "react-scripts": "^5.0.1",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
