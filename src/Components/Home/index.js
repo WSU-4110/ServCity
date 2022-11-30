@@ -2,13 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./home.css";
 function HomePage() {
-  console.log("render Home.js");
-
   return (
     <div>
       <h1> Welcome to ServiCity</h1>
 
-      <Link to="/Tires">
+      {/* <Link to="/Tires">
         <button type="submit" className="btn btn-primary">
           {" "}
           Tire Maintenance
@@ -48,7 +46,7 @@ function HomePage() {
           {" "}
           Do it Yourself
         </button>
-      </Link>
+      </Link> */}
     </div>
   );
 }
