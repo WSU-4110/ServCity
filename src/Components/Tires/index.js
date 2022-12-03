@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import RecommendedList from "../List/List_recommend";
 import NearbyList from "../List/List_nearby";
-import { GetNearbyPlaces, GetRecommendedPlaces } from "../../API/Api";
+import { GetNearbyPlaces } from "../../API/Api";
 import { Titleholder } from "./tires";
 
 export default function Tires() {

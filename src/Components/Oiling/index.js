@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./Oiling.js";
-import RecommendedList from "../List/List_recommend";
 import NearbyList from "../List/List_nearby";
-import { GetNearbyPlaces, GetRecommendedPlaces } from "../../API/Api";
+import { GetNearbyPlaces } from "../../API/Api";
 import { Titleholder } from "./Oiling";
+import Maps from "../Map/maps";
 
-export default function Oiling() {
+export default function Oiling({ isOpen }) {
   let service = "Oilchange";
   const [result, setResult] = useState([]);
 
@@ -14,6 +14,7 @@ export default function Oiling() {
       setResult(results);
     });
   }, []);
+  console.log(result);
 
   return (
     <>

@@ -1,7 +1,6 @@
-import { keys } from "@mui/system";
 import axios from "axios";
-import React, { useState, useEffect } from "react";
 
+// Funciton to post the user's location to local server
 export const Postuserslocation = async (coordinates) => {
   try {
     const res = await axios.post("http://localhost:4000/postlocation", {
@@ -11,6 +10,20 @@ export const Postuserslocation = async (coordinates) => {
   } catch (error) {
     console.log(error.response);
   }
+};
+
+// Function to get the user's location from the local server\
+export const Getuserslocation = async () => {
+  let location;
+  try {
+    await axios.get("http://localhost:4000/getlocation").then((res) => {
+      location = res.data;
+    });
+  } catch (error) {
+    console.log(error.response);
+  }
+  console.log(location);
+  return location;
 };
 
 //Places API Search
@@ -30,6 +43,8 @@ export const GetNearbyPlaces = async (service) => {
       results_oilchange.push({
         name: Api_result_1[key].name,
         formatted_address: Api_result_1[key].formatted_address,
+        lat: Api_result_1[key].lat,
+        lng: Api_result_1[key].lng,
         rating: Api_result_1[key].rating,
         review_count: Api_result_1[key].review_count,
         recommend: Api_result_1[key].recommend,
@@ -76,6 +91,8 @@ export const GetNearbyPlaces = async (service) => {
         formatted_address: Api_result_3[key].formatted_address,
         rating: Api_result_3[key].rating,
         review_count: Api_result_3[key].review_count,
+        lat: Api_result_3[key].lat,
+        lng: Api_result_3[key].lng,
         recommend: Api_result_3[key].recommend,
       });
     }
@@ -83,41 +100,3 @@ export const GetNearbyPlaces = async (service) => {
     return results_tires;
   }
 };
-
-// export const GetRecommendedPlaces = async (service) => {
-//   if (service === "Oilchange" || service === "Fluidflush") {
-//     let results_oilchange;
-//     await axios
-//       .get("http://localhost:4000/oilchange")
-//       .then((res) => {
-//         results_oilchange = res.data;
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//     return results_oilchange[0];
-//   } else if (service === "Brakes") {
-//     let results_brakes;
-//     await axios
-//       .get("http://localhost:4000/brakes")
-//       .then((res) => {
-//         results_brakes = res.data;
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-
-//     return results_brakes[0];
-//   } else if (service === "Tires" || service === "Alignment") {
-//     let results_tires;
-//     await axios
-//       .get("http://localhost:4000/tires")
-//       .then((res) => {
-//         results_tires = res.data;
-//       })
-//       .catch((error) => {
-//         console.log(error);
-//       });
-//     return results_tires[0];
-//   }
-// };

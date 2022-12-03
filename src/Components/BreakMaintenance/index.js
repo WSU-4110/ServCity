@@ -1,7 +1,7 @@
 import "./clutch.css";
 import React, { useState, useEffect } from "react";
 import { GetNearbyPlaces } from "../../API/Api";
-import Placelists from "../List/List_recommend";
+import Placelists from "../List/List_nearby";
 export default function BrakeMaintenance() {
   const [results, setResults] = useState([]);
 

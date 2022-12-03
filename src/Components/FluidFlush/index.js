@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { GetNearbyPlaces, GetRecommendedPlaces } from "../../API/Api";
-import RecommendedList from "../List/List_recommend";
+import { GetNearbyPlaces } from "../../API/Api";
 import NearbyList from "../List/List_nearby";
 import { Titleholder } from "./FluidFlush";
 
