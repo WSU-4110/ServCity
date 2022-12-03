@@ -7,6 +7,7 @@ import Oiling from "./Components/Oiling"
 import Alignment from "./Components/TireAlignment"
 import FluidFlush from "./Components/FluidFlush";
 import Tires from "./Components/Tires";
+import UserRegister from "./Components/Profile/UserRegister";
 
 import {
   BrowserRouter as Router,
@@ -30,6 +31,7 @@ function App() {
           <Route path="/FluidFlush" element={<FluidFlush/>}/>
           <Route path="/Tires" element={<Tires/>}/>
           <Route path="/TireAlignment" element={<Alignment/>}/>
+          <Route path="/UserRegister" element={<UserRegister/>}/>
         </Routes>
       </Router>
     </>
