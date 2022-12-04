@@ -33,8 +33,7 @@ app.get("/oilchange", async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
+      Authorization: `Bearer ${process.env.REACT_APP_YelpAPIKEY}`,
     },
   };
 
@@ -164,8 +163,7 @@ app.get("/tires", async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
+      Authorization: `Bearer ${process.env.REACT_APP_YelpAPIKEY}`,
     },
   };
 
@@ -266,8 +264,7 @@ app.get("/brakes", async (req, res) => {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
+      Authorization: `Bearer ${process.env.REACT_APP_YelpAPIKEY}`,
     },
   };
 
