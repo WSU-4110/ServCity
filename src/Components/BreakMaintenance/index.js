@@ -1,17 +1,28 @@
-import "./clutch.css";
+import "./brake.js";
 import React, { useState, useEffect } from "react";
 import { GetNearbyPlaces } from "../../API/Api";
-import Placelists from "../List/List_nearby";
+import NearbyList from "../List/List_nearby";
+import { Titleholder, InsightsContainer } from "./brake";
+
+import InsightsOilChange from "../InsightsSections/InsightsOilChange";
+
 export default function BrakeMaintenance() {
-  const [results, setResults] = useState([]);
+  const [result, setResult] = useState([]);
 
   let service = "Brakes";
 
-  // useEffect(() => {
-  //   GetPlacesData(service).then((results) => {
-  //     setResults(results);
-  //   });
-  // }, []);
+  useEffect(() => {
+    GetNearbyPlaces(service).then((results) => {
+      setResult(results);
+    });
+  }, []);
+  console.log(result);
 
-  return <Placelists results={results} />;
+  return (
+    <>
+      <Titleholder>Nearby Places</Titleholder>
+      <NearbyList result={result} />
+      <Titleholder>Insights</Titleholder>
+    </>
+  );
 }

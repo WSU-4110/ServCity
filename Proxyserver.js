@@ -29,18 +29,21 @@ app.get("/oilchange", async (req, res) => {
   var results = [];
 
   // getting Yelps data for oilchange
-  var config_1 = {
-    method: "get",
-    url: `https://api.yelp.com/v3/businesses/search?term=oilchange&latitude=${coordinates.coordinates.lat}&longitude=${coordinates.coordinates.lng}&limit=5&sort_by=rating`,
+  const options = {
+    method: "GET",
     headers: {
-      Authorization: "Bearer " + process.env.REACT_APP_YelpAPIKEY,
+      accept: "application/json",
+      Authorization:
+        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
     },
   };
-  await axios(config_1)
-    .then((response) => {
-      yelp_results = response.data;
-    })
-    .catch((err) => err);
+
+  const Yelp_Api_response = await fetch(
+    `https://api.yelp.com/v3/businesses/search?latitude=${coordinates.coordinates.lat}&longitude=${coordinates.coordinates.lng}&term=oilchange&limit=5&sort_by=rating`,
+    options
+  );
+
+  yelp_results = await Yelp_Api_response.json();
   // getting foursquares data for oilchange
   var config_2 = {
     method: "get",
@@ -156,18 +159,22 @@ app.get("/tires", async (req, res) => {
   var results = [];
 
   // getting Yelps data for tires
-  var config_1 = {
-    method: "get",
-    url: `https://api.yelp.com/v3/businesses/search?term=tires&latitude=${coordinates.coordinates.lat}&longitude=${coordinates.coordinates.lng}&limit=4&sort_by=rating`,
+  // getting Yelps data for oilchange
+  const options = {
+    method: "GET",
     headers: {
-      Authorization: "Bearer " + process.env.REACT_APP_YelpAPIKEY,
+      accept: "application/json",
+      Authorization:
+        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
     },
   };
-  await axios(config_1)
-    .then((response) => {
-      yelp_results = response.data;
-    })
-    .catch((err) => err);
+
+  const Yelp_Api_response = await fetch(
+    `https://api.yelp.com/v3/businesses/search?latitude=${coordinates.coordinates.lat}&longitude=${coordinates.coordinates.lng}&term=tires&limit=5&sort_by=rating`,
+    options
+  );
+
+  yelp_results = await Yelp_Api_response.json();
   // getting foursquares data for tires
   var config_2 = {
     method: "get",
@@ -248,9 +255,59 @@ app.get("/tires", async (req, res) => {
   res.json(results);
 });
 
-// Calling Foursquares api from the server side for Brakes
+// Calling yelp fusion api from the server side for brakes
+app.get("/brakes", async (req, res) => {
+  var yelp_results;
+  var results = [];
 
-// calling the Google places api from the server side
+  // getting Yelps data for tires
+  // getting Yelps data for oilchange
+  const options = {
+    method: "GET",
+    headers: {
+      accept: "application/json",
+      Authorization:
+        "Bearer Hbvuc1ZOmvKEwfP0tgp2QS9Rv_XNS1ALKsnxfl9VsNZiNtaLTvqfBFV4vpxUmlAO8qza28jnAvH1IwGPV-cQUQV-FyueeuqbmVpjSG74Y4xsh2GCvdME1eSs9RWMY3Yx",
+    },
+  };
+
+  const Yelp_Api_response = await fetch(
+    `https://api.yelp.com/v3/businesses/search?latitude=${coordinates.coordinates.lat}&longitude=${coordinates.coordinates.lng}&term=tires&limit=10&sort_by=rating`,
+    options
+  );
+
+  yelp_results = await Yelp_Api_response.json();
+
+  // Storing the first palce from the yelp api results array as the recommended place
+  results.push({
+    name: yelp_results.businesses[0].name,
+    formatted_address: `${yelp_results.businesses[0].location.display_address[0]} ${yelp_results.businesses[0].location.display_address[1]}`,
+    rating: yelp_results.businesses[0].rating,
+    rating_count: yelp_results.businesses[0].review_count,
+    distance: yelp_results.businesses[0].distance,
+    lat: yelp_results.businesses[0].coordinates.latitude,
+    lng: yelp_results.businesses[0].coordinates.longitude,
+    recommend: "yes",
+  });
+  // Storing the rest of the place from the yelp api results array as nonrecommended place
+  for (const key of Object.keys(yelp_results.businesses)) {
+    if (key > 0) {
+      results.push({
+        name: yelp_results.businesses[key].name,
+        formatted_address: `${yelp_results.businesses[key].location.display_address[0]} ${yelp_results.businesses[key].location.display_address[1]}`,
+        rating: yelp_results.businesses[key].rating,
+        rating_count: yelp_results.businesses[key].review_count,
+        distance: yelp_results.businesses[key].distance,
+        lat: yelp_results.businesses[key].coordinates.latitude,
+        lng: yelp_results.businesses[key].coordinates.longitude,
+        recommend: "no",
+      });
+    }
+  }
+
+  res.json(results);
+});
+
 app.listen(4000, function () {
   console.log("Server started on port 4000");
 });

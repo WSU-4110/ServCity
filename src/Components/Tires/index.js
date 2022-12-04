@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NearbyList from "../List/List_nearby";
 import { GetNearbyPlaces } from "../../API/Api";
-import { Titleholder } from "./tires";
+import { Titleholder, InsightsContainer } from "./tires";
+import InsightsTireRotation from "../InsightsSections/InsightsTireRotation";
 
 export default function Tires() {
   let service = "Tires";
@@ -17,6 +18,10 @@ export default function Tires() {
     <>
       <Titleholder>Nearby Places</Titleholder>
       <NearbyList result={result} />
+      <Titleholder>Insights</Titleholder>
+      <InsightsContainer>
+        <InsightsTireRotation />
+      </InsightsContainer>
     </>
   );
 }

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import NearbyList from "../List/List_nearby";
 import { GetNearbyPlaces } from "../../API/Api";
-import { Titleholder } from "./alignment";
+import { Titleholder, InsightsContainer } from "./alignment";
+import InsightsAlignment from "../InsightsSections/InsightsAlignment";
 
 export default function Alignment() {
   let service = "Alignment";
@@ -17,6 +18,10 @@ export default function Alignment() {
     <>
       <Titleholder>Nearby Places</Titleholder>
       <NearbyList result={result} />
+      <Titleholder>Insights</Titleholder>
+      <InsightsContainer>
+        <InsightsAlignment />
+      </InsightsContainer>
     </>
   );
 }

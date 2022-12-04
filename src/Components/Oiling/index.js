@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./Oiling.js";
 import NearbyList from "../List/List_nearby";
 import { GetNearbyPlaces } from "../../API/Api";
-import { Titleholder } from "./Oiling";
+import { Titleholder, InsightsContainer } from "./Oiling";
+import InsightsOilChange from "../InsightsSections/InsightsOilChange";
 import Maps from "../Map/maps";
 
 export default function Oiling({ isOpen }) {
@@ -20,6 +21,10 @@ export default function Oiling({ isOpen }) {
     <>
       <Titleholder>Nearby Places</Titleholder>
       <NearbyList result={result} />
+      <Titleholder>Insights</Titleholder>
+      <InsightsContainer>
+        <InsightsOilChange />
+      </InsightsContainer>
     </>
   );
 }

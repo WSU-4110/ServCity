@@ -15,3 +15,7 @@ export const Titleholder = styled.div`
   letter-spacing: 0em;
   text-align: center;
 `;
+export const InsightsContainer = styled.div`
+  margin-left: 10%;
+  margin-right: 10%;
+`;

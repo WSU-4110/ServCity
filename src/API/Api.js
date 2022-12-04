@@ -63,14 +63,15 @@ export const GetNearbyPlaces = async (service) => {
         console.log(error);
       });
     for (const key of Object.keys(Api_result_2)) {
-      if (key > 0) {
-        results_brakes.push({
-          name: Api_result_2[key].name,
-          formatted_address: Api_result_2[key].formatted_address,
-          rating: Api_result_2[key].rating,
-          review_count: Api_result_2[key].review_count,
-        });
-      }
+      results_brakes.push({
+        name: Api_result_2[key].name,
+        formatted_address: Api_result_2[key].formatted_address,
+        lat: Api_result_2[key].lat,
+        lng: Api_result_2[key].lng,
+        rating: Api_result_2[key].rating,
+        review_count: Api_result_2[key].review_count,
+        recommend: Api_result_2[key].recommend,
+      });
     }
 
     return results_brakes;
