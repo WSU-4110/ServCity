@@ -1,31 +1,27 @@
 import React, { useState, useEffect } from "react";
-import RecommendedList from "../List/List_recommend";
 import NearbyList from "../List/List_nearby";
-import { GetNearbyPlaces, GetRecommendedPlaces } from "../../API/Api";
-import { Titleholder } from "./tires";
+import { GetNearbyPlaces } from "../../API/Api";
+import { Titleholder, InsightsContainer } from "./tires";
+import InsightsTireRotation from "../InsightsSections/InsightsTireRotation";
 
 export default function Tires() {
   let service = "Tires";
   const [result, setResult] = useState([]);
-  const [recommended, setRecommended] = useState([]);
 
   useEffect(() => {
     GetNearbyPlaces(service).then((results) => {
       setResult(results);
     });
   }, []);
-  useEffect(() => {
-    GetRecommendedPlaces(service).then((results) => {
-      setRecommended(results);
-    });
-  }, []);
 
   return (
     <>
-      <Titleholder>Recommended</Titleholder>
-      <RecommendedList recommended={recommended} />
       <Titleholder>Nearby Places</Titleholder>
       <NearbyList result={result} />
+      <Titleholder>Insights</Titleholder>
+      <InsightsContainer>
+        <InsightsTireRotation />
+      </InsightsContainer>
     </>
   );
 }
