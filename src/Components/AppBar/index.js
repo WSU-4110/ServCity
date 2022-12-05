@@ -14,7 +14,7 @@ import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "Automotive", "DIY"];
+const pages = ["Home"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -129,7 +129,11 @@ const ResponsiveAppBar = () => {
                 sx={{ my: 2, color: "white", display: "block" }}
               >
                 <Link
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{
+                    textDecoration: "none",
+                    color: "black",
+                    margin: "20px",
+                  }}
                   to={`/${page}`}
                 >
                   {page}

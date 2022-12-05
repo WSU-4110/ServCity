@@ -58,7 +58,7 @@ const PlaceDetails = ({ places }) => {
             background: "rgb(0, 126, 203)",
           }}
         >
-          Website
+          Show in Map
         </Button>
       </Box>
     </Card>
