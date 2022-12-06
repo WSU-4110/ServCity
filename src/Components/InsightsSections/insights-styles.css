@@ -40,12 +40,16 @@ p {
   margin-top: 15px;
   font-size: 25px;
 }
-
+.Carousel {
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 800px;
+}
 section {
   top: "50%";
-  height: 250px;
+  height: 600px;
   align-items: center;
-  width: "%70";
+  width: "500px";
   padding: 3.5em;
   margin: 25px;
   margin-left: auto;

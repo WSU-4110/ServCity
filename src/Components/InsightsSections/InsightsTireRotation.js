@@ -17,6 +17,7 @@ var settings = {
   slidesToScroll: 1,
   autoplay: true,
   centerMode: true,
+  className: "Carousel",
 };
 const App = () => (
   <Slider {...settings}>
