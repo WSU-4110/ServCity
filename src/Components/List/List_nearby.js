@@ -14,6 +14,7 @@ const List = ({ result }) => {
   const toggleModal = () => {
     setOpenModal(!modal);
   };
+  console.log(modal);
   var settings = {
     dots: true,
     infinite: true,
@@ -21,13 +22,9 @@ const List = ({ result }) => {
     slidesToShow: 1,
     slidesToScroll: 1,
     centerMode: true,
-    centerPadding: "350px",
+    centerPadding: "250px",
   };
-  if (modal) {
-    document.body.classList.add("active-modal");
-  } else {
-    document.body.classList.remove("active-modal");
-  }
+
   return (
     <>
       <Listcontainer>
@@ -39,17 +36,18 @@ const List = ({ result }) => {
           ))}
         </Slider>
       </Listcontainer>
-      {modal && (
-        <div className="modal">
-          <div onClick={toggleModal} className="overlay"></div>
-          <div className="modal-content">
+
+      {modal === true ? (
+        <div className="ModalContainer">
+          <div onClick={toggleModal} className="Modaloverlay"></div>
+          <div className="Modalcontent">
             <Maps placeLocation={location} />
             <button className="close-modal" onClick={toggleModal}>
               X
             </button>
           </div>
         </div>
-      )}
+      ) : null}
     </>
   );
 };

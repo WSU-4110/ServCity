@@ -10,6 +10,7 @@ var settings = {
   slidesToScroll: 1,
   centerMode: true,
   autoplay: true,
+  className: "Carousel",
 };
 const contentStyle = {
   height: "160px",
@@ -82,6 +83,7 @@ const App = () => (
         </p>
       </section>
     </div>
+    
   </Slider>
 );
 export default App;

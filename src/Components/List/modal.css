@@ -1,29 +1,24 @@
-body.active-modal {
-  overflow-y: hidden;
-}
-
-.btn-modal {
+/* .btn-modal {
   padding: 10px 20px;
   display: block;
   margin: 100px auto 0;
   font-size: 18px;
-}
+} */
 
-.modal,
-.overlay {
+.ModalContainer,
+.Modaloverlay {
   width: 100vw;
   height: 100vh;
-  top: 0;
   left: 0;
   right: 0;
+  top: 0;
   bottom: 0;
   position: fixed;
 }
-
-.overlay {
+.Modaloverlay {
   background: rgba(49, 49, 49, 0.8);
 }
-.modal-content {
+.Modalcontent {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -35,7 +30,6 @@ body.active-modal {
   max-width: 600px;
   min-width: 300px;
 }
-
 .close-modal {
   position: absolute;
   top: 10px;

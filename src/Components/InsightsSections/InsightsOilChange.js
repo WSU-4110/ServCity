@@ -10,11 +10,11 @@ var settings = {
   slidesToScroll: 1,
   autoplay: true,
   centerMode: true,
+  className: "Carousel",
 };
 const contentStyle = {
-  height: "160px",
+  height: "200px",
   color: "#fff",
-  left: "50%",
   lineHeight: "160px",
   textAlign: "center",
   background: "#364d79",

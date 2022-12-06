@@ -12,6 +12,8 @@ export const Postuserslocation = async (coordinates) => {
   }
 };
 
+
+
 // Function to get the user's location from the local server\
 export const Getuserslocation = async () => {
   let location;

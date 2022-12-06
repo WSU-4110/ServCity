@@ -6,7 +6,7 @@ import Card from "@mui/joy/Card";
 import { Chip, Rating } from "@mui/material";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
-import TiresPic from "../../Images/Service.png";
+import ServicePic from "./Service.png";
 
 const PlaceDetails = ({ places, setOpenModal, SetLocation }) => {
   return (
@@ -14,7 +14,7 @@ const PlaceDetails = ({ places, setOpenModal, SetLocation }) => {
       <Card
         variant="outlined"
         sx={{
-          height: "300px",
+          height: "350px",
           Width: "250px",
           margin: "10px",
           color: "white",
@@ -41,7 +41,7 @@ const PlaceDetails = ({ places, setOpenModal, SetLocation }) => {
         </IconButton>
 
         <AspectRatio minHeight="120px" maxHeight="180px" sx={{ my: 2 }}>
-          <img src={TiresPic} height="150px" alt="" />
+          <img src={ServicePic} height="150px" alt="" />
         </AspectRatio>
 
         <Box sx={{ display: "flex" }}>
