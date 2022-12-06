@@ -9,8 +9,11 @@ import Oiling from "./Components/Oiling";
 import Alignment from "./Components/TireAlignment";
 import FluidFlush from "./Components/FluidFlush";
 import Tires from "./Components/Tires";
+import ForumPage from './Components/Forum';
+
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { Forum } from "@mui/icons-material";
 
 function App() {
   const [coordinates, setCoordinates] = useState({});
@@ -43,6 +46,9 @@ function App() {
           <Route path="/FluidFlush" element={<FluidFlush />} />
           <Route path="/Tires" element={<Tires />} />
           <Route path="/TireAlignment" element={<Alignment />} />
+          <Route path="/Forum" element={<ForumPage />} />
+         
+
         </Routes>
       </Router>
     </>
