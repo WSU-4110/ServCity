@@ -1,32 +1,105 @@
 import axios from "axios";
 
-// Google  Places API Search
-
-// Foursquare Places API Search
-export const GetFoursquarePlacesData = async (l1, l2, service) => {
-  let Service = service;
-  let lat = l1;
-  let lon = l2;
-  let results = [];
-  const options = {
-    method: "GET",
-    url: "https://api.foursquare.com/v3/places/search",
-    headers: {
-      accept: "application/json",
-      Authorization: "fsq3YPruQ40Fu5HIR4q7vFBp68SKhMTntAU283mB1HAgp18=",
-    },
-  };
-
-  const response = await fetch(
-    `https://api.foursquare.com/v3/places/search?query=${Service}&ll=${lat}%2C${lon}&fields=name%2Clocation&limit=5`,
-    options
-  );
-  const data = await response.json();
-  for (const key of Object.keys(data.results)) {
-    results.push({
-      name: data.results[key].name,
-      formatted_address: data.results[key].location.formatted_address,
+// Funciton to post the user's location to local server
+export const Postuserslocation = async (coordinates) => {
+  try {
+    const res = await axios.post("http://localhost:4000/postlocation", {
+      coordinates,
     });
+    console.log(res.data);
+  } catch (error) {
+    console.log(error.response);
   }
-  return results;
+};
+
+
+
+// Function to get the user's location from the local server\
+export const Getuserslocation = async () => {
+  let location;
+  try {
+    await axios.get("http://localhost:4000/getlocation").then((res) => {
+      location = res.data;
+    });
+  } catch (error) {
+    console.log(error.response);
+  }
+  console.log(location);
+  return location;
+};
+
+//Places API Search
+export const GetNearbyPlaces = async (service) => {
+  if (service === "Oilchange" || service === "Fluidflush") {
+    let results_oilchange = [];
+    let Api_result_1;
+    await axios
+      .get("http://localhost:4000/oilchange")
+      .then((res) => {
+        Api_result_1 = res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    for (const key of Object.keys(Api_result_1)) {
+      results_oilchange.push({
+        name: Api_result_1[key].name,
+        formatted_address: Api_result_1[key].formatted_address,
+        lat: Api_result_1[key].lat,
+        lng: Api_result_1[key].lng,
+        rating: Api_result_1[key].rating,
+        review_count: Api_result_1[key].review_count,
+        recommend: Api_result_1[key].recommend,
+      });
+    }
+    return results_oilchange;
+  } else if (service === "Brakes") {
+    let results_brakes = [];
+    let Api_result_2;
+    await axios
+      .get("http://localhost:4000/brakes")
+      .then((res) => {
+        Api_result_2 = res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    for (const key of Object.keys(Api_result_2)) {
+      results_brakes.push({
+        name: Api_result_2[key].name,
+        formatted_address: Api_result_2[key].formatted_address,
+        lat: Api_result_2[key].lat,
+        lng: Api_result_2[key].lng,
+        rating: Api_result_2[key].rating,
+        review_count: Api_result_2[key].review_count,
+        recommend: Api_result_2[key].recommend,
+      });
+    }
+
+    return results_brakes;
+  } else if (service === "Tires" || service === "Alignment") {
+    let results_tires = [];
+    let Api_result_3;
+    await axios
+      .get("http://localhost:4000/tires")
+      .then((res) => {
+        Api_result_3 = res.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    for (const key of Object.keys(Api_result_3)) {
+      results_tires.push({
+        name: Api_result_3[key].name,
+        formatted_address: Api_result_3[key].formatted_address,
+        rating: Api_result_3[key].rating,
+        review_count: Api_result_3[key].review_count,
+        lat: Api_result_3[key].lat,
+        lng: Api_result_3[key].lng,
+        recommend: Api_result_3[key].recommend,
+      });
+    }
+
+    return results_tires;
+  }
 };

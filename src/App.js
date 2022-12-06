@@ -1,53 +1,63 @@
 import "./index";
 import React, { useState, useEffect } from "react";
-// import { Postuserslocation } from "./API/Api";
-import ResponsiveAppBar from "./Components/AppBar";
-import Home from "./Components/Home";
-import DIY from "./Components/DIY";
-import BrakeMaintenance from "./Components/BreakMaintenance";
-import Oiling from "./Components/Oiling";
-import Alignment from "./Components/TireAlignment";
-import FluidFlush from "./Components/FluidFlush";
-import Tires from "./Components/Tires";
-import UserRegister from "./Components/Profile/UserRegister";
+import Navbar from "./Components/Navbar/Navbar";
+import Home from "./Components/Pages/Home";
+import AtHome from "./Components/Pages/AtHome";
+import Alignment from "./Components/Pages/Alignment/Alignment";
+import OilChange from "./Components/Pages/OilChange/OilChange";
+import Brakes from "./Components/Pages/Brakes/Brakes";
+import Tires from "./Components/Pages/Tires/Tires";
+import FluidFlush from "./Components/Pages/FluidFlush/FluidFlash";
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import TopSection from "./Components/TopSection";
+import Footer from "./Components/Footer";
+import { Postuserslocation } from "./API/Api";
 
-
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+/** import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Routes,
+} from "react-router-dom"; **/
 
 function App() {
-  // const [coordinates, setCoordinates] = useState({});
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(
-  //     ({ coords: { latitude, longitude } }) => {
-  //       setCoordinates({ lat: latitude, lng: longitude });
-  //     }
-  //   );
-  // }, []);
-  // if (Object.keys(coordinates).length === 0) {
-  //   console.log("Empty location object");
-  //   console.log(coordinates);
-  // } else {
-  //   console.log("not empty");
-  //   console.log(coordinates);
-  //   Postuserslocation(coordinates);
-  // }
+  const [coordinates, setCoordinates] = useState({});
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(
+      ({ coords: { latitude, longitude } }) => {
+        setCoordinates({ lat: latitude, lng: longitude });
+      }
+    );
+  }, []);
+  if (Object.keys(coordinates).length === 0) {
+    console.log("Empty location object");
+    console.log(coordinates);
+  } else {
+    console.log("not empty");
+    console.log(coordinates);
+    Postuserslocation(coordinates);
+  }
 
   return (
-    <>
+    <div
+      className="bg-container"
+      style={{ backgroundImage: "url(/background.png)" }}
+    >
       <Router>
-        <ResponsiveAppBar />
+        <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Home" element={<Home />} />
-          <Route path="/DIY" element={<DIY />} />
-          <Route path="/BreakMaintenance" element={<BrakeMaintenance />} />
-          <Route path="/Oiling" element={<Oiling />} />
+          <Route path="/" exact element={<Home />} />
+          <Route path="/Alignment" element={<Alignment />} />
+          <Route path="/Brakes" element={<Brakes />} />
           <Route path="/FluidFlush" element={<FluidFlush />} />
+          <Route path="/OilChange" element={<OilChange />} />
           <Route path="/Tires" element={<Tires />} />
-          <Route path="/TireAlignment" element={<Alignment />} />
+          <Route path="/AtHome" element={<AtHome />} />
         </Routes>
+        {/* <Footer /> */}
       </Router>
-    </>
+    </div>
   );
 }
 
