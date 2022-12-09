@@ -13,6 +13,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import TopSection from "./Components/TopSection";
 import Footer from "./Components/Footer";
 import { Postuserslocation } from "./API/Api";
+import Forum from "./Components/Pages/Forum/Forum";
+import Scheduling from "./Components/Pages/Scheduling";
 
 /** import {
   BrowserRouter as Router,
@@ -54,6 +56,8 @@ function App() {
           <Route path="/OilChange" element={<OilChange />} />
           <Route path="/Tires" element={<Tires />} />
           <Route path="/AtHome" element={<AtHome />} />
+          <Route path="/Forum" element={<Forum />} />
+          <Route path="/Scheduling" element={<Scheduling />} />
         </Routes>
         {/* <Footer /> */}
       </Router>

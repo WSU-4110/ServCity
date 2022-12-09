@@ -14,11 +14,10 @@ const Login = (props) => {
     emailError,
     passwordError,
   } = props;
-  
 
   return (
-    <section className="login">
-      <div className="loginContainer">
+    <section className="loginjd">
+      <div className="loginContainerjd">
         <label>Username</label>
         <input
           type="text"
@@ -37,10 +36,12 @@ const Login = (props) => {
           onChange={(e) => setPassword(e.target.value)}
         />
         <p className="errorMsg">{passwordError}</p>
-        <div className="btnContainer">
+        <div className="btnContainerjd">
           {hasAccount ? (
             <>
-              <button onClick={handleLogin}>Sign in</button>
+              <button className="buttonjd" onClick={handleLogin}>
+                Sign in
+              </button>
               <p>
                 Don't have an account ?{" "}
                 <span onClick={() => setHasAccount(!hasAccount)}>Sign up</span>
@@ -48,7 +49,9 @@ const Login = (props) => {
             </>
           ) : (
             <>
-              <button onClick={handleSignup}>Sign up</button>
+              <button className="buttonjd" onClick={handleSignup}>
+                Sign up
+              </button>
               <p>
                 Have an account ?{" "}
                 <span onClick={() => setHasAccount(!hasAccount)}>Sign in</span>
