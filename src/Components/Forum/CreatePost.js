@@ -27,10 +27,10 @@ export default function CreatePost() {
     <div className="createPostPage">
       <div className="cpContainer">
         <h1>Create a Post</h1>
-//         {/* //div for name of user posting */}
+        {/* //div for name of user posting */}
         <div className="inputGp">
           <label>Name:</label>
-//           {/* update state according to input */}
+        {/* update state according to input */}
           <input
             placeholder="Name"
             onChange={(event) => {
