@@ -1,25 +1,27 @@
-// Import the functions you need from the SDKs you need
+// // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import {getFirestore} from 'firebase/firestore';
-// Import the functions you need from the SDKs you need
 
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+// // TODO: Add SDKs for Firebase products that you want to use
+// // https://firebase.google.com/docs/web/setup#available-libraries
+
+// // Your web app's Firebase configuration
+// // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCfhHYAHP4U-W23vl5Ky8MxgCF-3JMqzLs",
-  authDomain: "test1-4caf4.firebaseapp.com",
-  projectId: "test1-4caf4",
-  storageBucket: "test1-4caf4.appspot.com",
-  messagingSenderId: "458824630943",
-  appId: "1:458824630943:web:36bf8fc7e18c5f986018aa",
-  measurementId: "G-96V9QYB97P"
+  apiKey: "AIzaSyDty54eMac5vrDZBtlsknDyvGf9k0Qty2s",
+  authDomain: "finalforum2.firebaseapp.com",
+  projectId: "finalforum2",
+  storageBucket: "finalforum2.appspot.com",
+  messagingSenderId: "447399651480",
+  appId: "1:447399651480:web:2ea0cd6d9fcdc52b9f08ed",
+  measurementId: "G-PVYWR76FVF"
 };
 
-// Initialize Firebase
+// // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
 export const db = getFirestore(app);
+
