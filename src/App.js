@@ -2,7 +2,7 @@ import "./index";
 import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import Home from "./Components/Pages/Home";
-import AtHome from "./Components/Pages/AtHome";
+import AtHome from "./Components/Pages/AtHome/AtHome";
 import Alignment from "./Components/Pages/Alignment/Alignment";
 import OilChange from "./Components/Pages/OilChange/OilChange";
 import Brakes from "./Components/Pages/Brakes/Brakes";
@@ -10,11 +10,9 @@ import Tires from "./Components/Pages/Tires/Tires";
 import FluidFlush from "./Components/Pages/FluidFlush/FluidFlash";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import TopSection from "./Components/TopSection";
-import Footer from "./Components/Footer";
 import { Postuserslocation } from "./API/Api";
 import Forum from "./Components/Pages/Forum/Forum";
-import Scheduling from "./Components/Pages/Scheduling";
+import Scheduling from "./Components/Pages/Scheduling/Scheduling";
 
 /** import {
   BrowserRouter as Router,
