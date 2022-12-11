@@ -6,7 +6,7 @@ function TopSection() {
   return (
     <div className="top-container">
       <h1>SERVICITY</h1>
-      <p>find the right service for your vehicle</p>
+      <p>Find the right service for your vehicle</p>
     </div>
   );
 }
