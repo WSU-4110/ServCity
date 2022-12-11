@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #132f4c;
+  background: #021c2b;
   overflow-x: hidden;
 }
 
@@ -14,7 +14,7 @@ code {
     monospace;
 }
 .textfield_inputs {
-  color: rgb(8, 239, 0) !important;
+  color: rgb(132, 162, 148) !important;
 }
 .textfield_labels {
   color: white !important;

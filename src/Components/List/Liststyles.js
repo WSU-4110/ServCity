@@ -3,8 +3,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 
 export const Listcontainer = mystyles.div`
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 5%;
+  margin-right: 5%;
 `;
 export const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: (theme.palette.mode = "#1A2027"),
