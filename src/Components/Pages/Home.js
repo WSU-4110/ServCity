@@ -10,7 +10,6 @@ import { useState } from "react";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
-
 /** const useStyles = makeStyles(theme => ({
     root: {
         display:'flex',
@@ -30,18 +29,15 @@ function HomePage() {
 
       {modal === true ? (
         <div className="ModalContainer">
-        <div onClick={toggleModal} className="Modaloverlay"></div>
-        <div className="Modalcontent">
-          <LoginHandler />
-          <button className="close-modal" onClick={toggleModal}>
-            X
-          </button>
+          <div onClick={toggleModal} className="Modaloverlay"></div>
+          <div className="Modalcontent">
+            <LoginHandler />
+            <button className="close-modal" onClick={toggleModal}>
+              X
+            </button>
+          </div>
         </div>
-      </div>
-    ) : null}
-
-      
-
+      ) : null}
     </>
   );
 }
