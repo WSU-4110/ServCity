@@ -1,6 +1,6 @@
 import React from "react";
 import { Titleholder, Content } from "./SchedulingStyles";
-import TodoList from "../ToDoList";
+import TodoList from "../../ToDoList";
 import "./Scheduling.css";
 
 function Scheduling() {

@@ -79,15 +79,7 @@ textarea {
 
 
 
-.homePage {
-  width: 100%;
-  min-height: calc(100vh - 80px);
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 20px;
-}
+
 
 .homePage .post {
   width: 600px;
@@ -147,3 +139,13 @@ textarea {
   right: 16px;
 }
  */
+.homePage {
+  width: 100%;
+  min-height: calc(100vh - 80px);
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  background: url("../../../../public/images/back.png");
+}
