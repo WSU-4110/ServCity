@@ -1,9 +1,8 @@
 //
 //AtHome Table
 
-
 import React, { useEffect, useState } from "react";
-import "../css/AtHomeTablePopUp.css";
+import "../AtHome/css/AtHomeTablePopUp.css";
 import ReactPlayer from "react-player";
 
 export default function Table({ results }) {
