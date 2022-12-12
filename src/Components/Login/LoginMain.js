@@ -73,9 +73,9 @@ export default function LoginHandler() {
     });
   };
 
-  useEffect(() => {
-    authListener();
-  }, []);
+  // useEffect(() => {
+  //   authListener();
+  // }, []);
 
   return (
     <div className="App">
