@@ -1,21 +1,3 @@
-# ServCity
-
-
-Technology Stack used to develop the application:
-
-Firebase
-
-React
-
-Material UI
-
-Authors
-Poll Chowdhury
-Jaideep Chunduri
-Andrea Cruc
-Remm Rizk
-
-
 !-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
 <a name="readme-top"></a>
 <!--
