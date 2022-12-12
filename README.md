@@ -177,11 +177,11 @@ Don't forget to give the project a star! Thanks again!
 <!-- ACKNOWLEDGMENTS -->
 ## Authors
 
-* [Poll Chowdhury]
-* [Jaideep Chunduri]
-* [Andrea Cuc]
-* [Reem Rizk]
-* [Mahnoor Waheed]
+* Poll Chowdhury
+* Jaideep Chunduri
+* Andrea Cuc
+* Reem Rizk
+* Mahnoor Waheed
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
