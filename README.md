@@ -80,7 +80,16 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Write the description of the project
+This is a web application project that helps user with their automotive service. It contains the following features:
+<h1> Features </h1>
+<li> Users can use our applcation to find a nearby automotive service. 
+<li> The application will provide the user a recommended places for their desired service.
+<li> Users are also provided with insights that would help the them make decision for their service.
+<li> Users can also find parts and videos for a DIY automotive service that they want to do at home. 
+<li> Users also have the option to post reviews and experience of different services.
+<li> Users also have the option to schedule reminders for a service.
+<li> Users also have the option to create an account and they can save their vehicle information to access the DIY and Scheduling features.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
