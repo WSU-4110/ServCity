@@ -1,66 +1,92 @@
-import "./index";
-import React, { useState, useEffect } from "react";
-import Navbar from "./Components/Navbar/Navbar";
-import Home from "./Components/Pages/Home";
-import AtHome from "./Components/Pages/AtHome/AtHome";
-import Alignment from "./Components/Pages/Alignment/Alignment";
-import OilChange from "./Components/Pages/OilChange/OilChange";
-import Brakes from "./Components/Pages/Brakes/Brakes";
-import Tires from "./Components/Pages/Tires/Tires";
-import FluidFlush from "./Components/Pages/FluidFlush/FluidFlash";
+import React from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Postuserslocation } from "./API/Api";
-import Forum from "./Components/Pages/Forum/Forum";
-import Scheduling from "./Components/Pages/Scheduling/Scheduling";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import AtHome from "./Pages/AtHome";
+import Brakes from "./Pages/Brakes";
+import Fluid from "./Pages/Fluid";
+import Lights from "./Pages/Lights";
+import Oil from "./Pages/Oil";
+import Filter from "./Pages/Filter";
 
-/** import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Routes,
-} from "react-router-dom"; **/
+// import { collection, doc} from "@firebase/firestore";
+// import { useCollectionData } from "react-firebase-hooks/firestore";
+// import { db } from "./Database/firebase";
+// // import SubItems from "./SubItems";
+// import Home from "./Database/Home";
+// // import AddNew from "./AddNew";
 
 function App() {
-  const [coordinates, setCoordinates] = useState({});
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(
-      ({ coords: { latitude, longitude } }) => {
-        setCoordinates({ lat: latitude, lng: longitude });
-      }
-    );
-  }, []);
-  if (Object.keys(coordinates).length === 0) {
-    console.log("Empty location object");
-    console.log(coordinates);
-  } else {
-    console.log("not empty");
-    console.log(coordinates);
-    Postuserslocation(coordinates);
-  }
-
   return (
-    <div
-      className="bg-container"
-      style={{ backgroundImage: "url(/background.png)" }}
-    >
-      <Router>
-        <Navbar />
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/Alignment" element={<Alignment />} />
-          <Route path="/Brakes" element={<Brakes />} />
-          <Route path="/FluidFlush" element={<FluidFlush />} />
-          <Route path="/OilChange" element={<OilChange />} />
-          <Route path="/Tires" element={<Tires />} />
-          <Route path="/AtHome" element={<AtHome />} />
-          <Route path="/Forum" element={<Forum />} />
-          <Route path="/Scheduling" element={<Scheduling />} />
-        </Routes>
-        {/* <Footer /> */}
-      </Router>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AtHome />} />
+        <Route path="/Brakes" element={<Brakes />} />
+        <Route path="/Filter" element={<Filter />} />
+        <Route path="/Fluid" element={<Fluid />} />
+        <Route path="/Lights" element={<Lights />} />
+        <Route path="/Oil" element={<Oil />} />
+      </Routes>
+    </Router>
   );
 }
 
 export default App;
+
+// DATABASE APP().JS FILE
+
+// function App() {
+
+//   // const query = collection(db, "Cars");
+
+//   // const FuelF = collection(db.collection('Cars').doc('FordFocus2015').collection('FilterChange').doc('FuelFilter'));
+
+//   // const FuelF = doc(db, "Cars", "FordFocus2015", "FilterChange", "FuelFilter" );
+//   // const [docs, loading, error] = useCollectionData(FuelF);
+
+//   return (
+//     <>
+//         <h1>Cars</h1>
+
+//         {/* {loading && "Loading..."} */}
+//         {/* <ul>
+//           {docs.map((doc) => (
+//             <div key={Math.random()}>
+//               <li>{doc.name}</li>
+
+//               <SubItems path={`Cars/${doc.name}`} />
+//             </div>
+//           ))}
+//         </ul> */}
+//         <Home/>
+
+//       </>
+//   );
+// }
+
+// export default App;
+
+// import logo from './logo.svg';
+// import './App.css';
+
+// function App() {
+//   return (
+//     <div className="App">
+//       <header className="App-header">
+//         <img src={logo} className="App-logo" alt="logo" />
+//         <p>
+//           Edit <code>src/App.js</code> and save to reload.
+//         </p>
+//         <a
+//           className="App-link"
+//           href="https://reactjs.org"
+//           target="_blank"
+//           rel="noopener noreferrer"
+//         >
+//           Learn React
+//         </a>
+//       </header>
+//     </div>
+//   );
+// }
+
+// export default App;

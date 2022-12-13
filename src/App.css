@@ -1,28 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  font-family: "Lato", sans-serif;
+/* .App {
+  text-align: center;
 }
 
-.home,
-.alignment,
-.brakes,
-.fluidflush,
-.tires,
-.oilchange .athome {
-  font-size: 3rem;
-  background: url("../public/images/back.png");
-  color: #fff;
-  font-size: 100px;
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
 }
 
-.athome {
-  background-image: ("/images/back.png");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px;
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
 }
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */

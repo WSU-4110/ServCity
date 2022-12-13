@@ -5,17 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #021c2b;
-  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-.textfield_inputs {
-  color: rgb(132, 162, 148) !important;
-}
-.textfield_labels {
-  color: white !important;
 }
