@@ -1,0 +1,140 @@
+  
+  /* Brakes */
+  
+  
+  .brake-container{
+    font-family: Gill Sans;
+    float: left;
+    text-transform: uppercase;
+    padding: 0px;
+    margin: 20px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    background: hsl(238, 57%, 12%);
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .brake-container:hover{
+    background: white;
+    color: hsl(238, 57%, 12%);
+  }
+  .brake-container table {
+    width:100%;
+  }
+  .brake-container tr {
+    height: 65px;
+  }
+  .brake-container td {
+    padding: 10px;
+  }
+  
+  
+  /* oil change */
+  .oil-container h1{
+    padding-bottom: 50px;
+  }
+  .oil-container{
+    font-family: Gill Sans;
+    float: left;
+    text-transform: uppercase;
+    padding: 0px;
+
+    margin: 50px;
+    width: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background: hsl(238, 57%, 12%);
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  .oil-container:hover{
+    background: white;
+    color: hsl(238, 57%, 12%);
+  }
+  
+  
+  
+  
+  /* generic */
+  .group {
+      /* border: 1px solid black; */
+      justify-content: center;
+      margin:auto;
+      padding: 75px;
+      width: 81.5%;
+    height: 550px;
+  }
+
+  .footer {
+    height: 150px;
+  }
+  
+  .footer-main{
+    padding-top: 100px;
+    height: 500px;
+  }
+  body {
+    text-align: center;
+    font-family: 'Oswald';
+    font-size: 22px;
+    font-weight: lighter;
+    text-transform: normal;
+    color: white;
+    font-size: 15px;
+  }
+  main{
+    background: #080849;
+  }
+  .header h1 {
+    font-size: 90px;
+    padding-top: 75px;
+  }
+
+  
+
+  Button {
+    padding: 1.3em 3em;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: #fff;
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  Button:hover {
+    background-color: #2353c4;
+    box-shadow: 0px 15px 20px rgba(64, 46, 229, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+  
+  Button:active {
+    transform: translateY(-1px);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
